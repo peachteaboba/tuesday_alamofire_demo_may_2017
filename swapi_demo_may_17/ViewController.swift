@@ -61,16 +61,8 @@ class ViewController: UIViewController {
                             
                             
                         }
-                        
-                        
-                        
-                        
-                        
+
                     }
-                    
-                    
-                    
-                    
                     
                 }
             } catch {
