@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
@@ -31,49 +32,30 @@ class ViewController: UIViewController {
         
         // specify the url that we will be sending the GET Request to
         let url = URL(string: "http://swapi.co/api/people/")
-        // create a URLSession to handle the request tasks
-        let session = URLSession.shared
-        
-        
-        // create a "data task" to make the request and run completion handler
-        let task = session.dataTask(with: url!, completionHandler: {
-            // see: Swift closure expression syntax
-            data, response, error in
-            // data -> JSON data, response -> headers and other meta-information, error-> if one occurred
-            // "do-try-catch" blocks execute a try statement and then use the catch statement for errors
-            do {
-                // try converting the JSON object to "Foundation Types" (NSDictionary, NSArray, NSString, etc.)
-                if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
+       
+        Alamofire.request(url!, method: .get, parameters: nil, headers: nil)
+            .responseJSON { response in
+            
+            
+                // Perform action on response
+                if let jsonResult = response.result.value as? NSDictionary {
+              
                     
-                    
-                    /// Print JSON
-                    
-                    if let resultsArray = jsonResult["results"] as? NSArray {
-                        
-                        
-                        for result in resultsArray {
-                            
-                            if let person = result as? NSDictionary {
-                                
-                                print(person["name"] ?? "nil")
-                                
-                            }
-                            
-                            
+                    if let resultArr = jsonResult["results"] as? NSArray{
+                        for result in resultArr {
+                            let r = result as! NSDictionary
+                            print(r["name"] ?? "nil")
                         }
-
                     }
                     
+                    
+                    
                 }
-            } catch {
-                print(error)
-            }
-        })
+            
+            
+        }
         
         
-        
-        task.resume()
-
     }
 
     

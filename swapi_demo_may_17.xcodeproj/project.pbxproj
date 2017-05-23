@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ADCAC2E6335FBB30BCE80062 /* Pods_swapi_demo_may_17.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BADB5B0CB2FEAB9C872958 /* Pods_swapi_demo_may_17.framework */; };
 		F1F6E65C1ED354C5009BC728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F6E65B1ED354C5009BC728 /* AppDelegate.swift */; };
 		F1F6E65E1ED354C5009BC728 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F6E65D1ED354C5009BC728 /* ViewController.swift */; };
 		F1F6E6611ED354C5009BC728 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1F6E65F1ED354C5009BC728 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		46BADB5B0CB2FEAB9C872958 /* Pods_swapi_demo_may_17.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swapi_demo_may_17.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		921878D8188BCD276399BC7E /* Pods-swapi_demo_may_17.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swapi_demo_may_17.release.xcconfig"; path = "Pods/Target Support Files/Pods-swapi_demo_may_17/Pods-swapi_demo_may_17.release.xcconfig"; sourceTree = "<group>"; };
+		AF4385A1C58AB2ED985843F6 /* Pods-swapi_demo_may_17.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swapi_demo_may_17.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swapi_demo_may_17/Pods-swapi_demo_may_17.debug.xcconfig"; sourceTree = "<group>"; };
 		F1F6E6581ED354C5009BC728 /* swapi_demo_may_17.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swapi_demo_may_17.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1F6E65B1ED354C5009BC728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1F6E65D1ED354C5009BC728 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADCAC2E6335FBB30BCE80062 /* Pods_swapi_demo_may_17.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E7E3AF23A58018E88283429D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF4385A1C58AB2ED985843F6 /* Pods-swapi_demo_may_17.debug.xcconfig */,
+				921878D8188BCD276399BC7E /* Pods-swapi_demo_may_17.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F1F6E64F1ED354C5009BC728 = {
 			isa = PBXGroup;
 			children = (
 				F1F6E65A1ED354C5009BC728 /* swapi_demo_may_17 */,
 				F1F6E6591ED354C5009BC728 /* Products */,
+				E7E3AF23A58018E88283429D /* Pods */,
+				FC8538E10DD4D11549999B54 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = swapi_demo_may_17;
 			sourceTree = "<group>";
 		};
+		FC8538E10DD4D11549999B54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46BADB5B0CB2FEAB9C872958 /* Pods_swapi_demo_may_17.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1F6E66A1ED354C5009BC728 /* Build configuration list for PBXNativeTarget "swapi_demo_may_17" */;
 			buildPhases = (
+				4AA84617F1EDCDFCD383991A /* [CP] Check Pods Manifest.lock */,
 				F1F6E6541ED354C5009BC728 /* Sources */,
 				F1F6E6551ED354C5009BC728 /* Frameworks */,
 				F1F6E6561ED354C5009BC728 /* Resources */,
+				F07ACDA4B9382E870E99A659 /* [CP] Embed Pods Frameworks */,
+				E6E336D3BF71AA098486EDE6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4AA84617F1EDCDFCD383991A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E6E336D3BF71AA098486EDE6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swapi_demo_may_17/Pods-swapi_demo_may_17-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F07ACDA4B9382E870E99A659 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swapi_demo_may_17/Pods-swapi_demo_may_17-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F1F6E6541ED354C5009BC728 /* Sources */ = {
@@ -261,6 +336,7 @@
 		};
 		F1F6E66B1ED354C5009BC728 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF4385A1C58AB2ED985843F6 /* Pods-swapi_demo_may_17.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 32H24EKY3R;
@@ -274,6 +350,7 @@
 		};
 		F1F6E66C1ED354C5009BC728 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 921878D8188BCD276399BC7E /* Pods-swapi_demo_may_17.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 32H24EKY3R;
